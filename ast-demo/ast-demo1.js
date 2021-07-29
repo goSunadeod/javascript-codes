@@ -2,14 +2,21 @@ const jf = require('jscodeshift');
 
 const code = `
 import React from 'react'
+import _ from 'lodash'
+// import _, {throttle, cloneDeep} from 'lodash'
 // import {throttle, cloneDeep} from 'lodash'
-// import _ from 'lodash'
-import _, {throttle, cloneDeep} from 'lodash'
-import {mmNB} from 'mmApi'
+import {mmNB} from 'mm-api'
+
+/**
+ * MMNB
+ * MMDDDD PLZ
+ */
+
 `;
 
 const root = jf(code);
 const test = root.find(jf.ImportDeclaration, { source: { value: 'lodash' } });
+console.log(test.length);
 if (!test.length) return;
 let lodashImportDeclaration;
 test.forEach((path) => {
