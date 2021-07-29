@@ -1,6 +1,6 @@
-const parse = require('@babel/parser').parse;
-const traverse = require('@babel/traverse').default;
-const generate = require('@babel/generator').default;
+const { parse } = require('@babel/parser');
+const { default: traverse } = require('@babel/traverse');
+const { default: generate } = require('@babel/generator');
 const types = require('@babel/types');
 
 /** 
