@@ -11,8 +11,8 @@ const types = require('@babel/types');
  */
 const code = `
 import React from 'react'
-import _ from 'lodash'
-// import _, {throttle, cloneDeep} from 'lodash'
+// import _ from 'lodash'
+import _, {throttle, cloneDeep} from 'lodash'
 // import {throttle, cloneDeep} from 'lodash'
 import {mmNB} from 'mm-api'
 
@@ -51,4 +51,9 @@ traverse(ast, {
   }
 });
 
-console.log(generate(ast).code);
+console.log(
+  generate(ast, {
+    compact: false
+    // retainLines: true
+  }).code
+);

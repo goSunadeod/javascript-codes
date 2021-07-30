@@ -2,8 +2,8 @@ const j = require('jscodeshift');
 
 const code = `
 import React from 'react'
-import _ from 'lodash'
-// import _, {throttle, cloneDeep} from 'lodash'
+// import _ from 'lodash'
+import _, {throttle, cloneDeep} from 'lodash'
 // import {throttle, cloneDeep} from 'lodash'
 import {mmNB} from 'mm-api'
 

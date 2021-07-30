@@ -85,6 +85,10 @@ const insertI18nDecl = (node) => {
   );
 };
 
+// 插入模版
+const insertTemplate = () => j.template.statement`
+const ${I18_FUNC} = useI18n()`;
+
 // 生成函数调用 t(key)
 function makeCallExpression(key, value) {
   return j.callExpression(j.identifier(key), [j.stringLiteral(value)]);
@@ -113,7 +117,8 @@ if (root.find(j.ImportDeclaration, { source: { value: I18_LIB } }).size() !== 0)
 insertUser();
 insertImport();
 
-insertI18nDecl(j(findOutFunction()).get('body', 'body').value);
+// insertI18nDecl(j(findOutFunction()).get('body', 'body').value);
+j(findOutFunction()).get('body', 'body').value.unshift(insertTemplate());
 
 root.find(j.Literal).forEach((path) => {
   const { node } = path;
