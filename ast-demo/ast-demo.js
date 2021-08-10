@@ -53,7 +53,7 @@ traverse(ast, {
 
 console.log(
   generate(ast, {
-    compact: false
-    // retainLines: true
+    compact: false,
+    retainLines: true
   }).code
 );

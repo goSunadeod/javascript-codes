@@ -169,6 +169,47 @@ babel的目的是对代码向下兼容的，会进行代码转换，而且即使
 作为codemod使用： npx jscodeshift -t codemod.js file
 也可以代码require操作等等
 
+- Collection
+
+  是对recast里的一种封装 通过 `jscodeshift(fileInfo.source).find`
+
+- Builder
+
+  ast构造器
+
+```js
+
+j.importDeclaration(
+      [j.importDefaultSpecifier(j.identifier(name))],
+      j.literal(specifier.type === 'ImportSpecifier' ? 'lodash/' + name : 'lodash')
+    );
+);
+
+```
+
+### 自动埋点
+
+#### react
+
+- Glob 读取文件
+  
+- 转换AST
+    ```j(code, { parser: getParser("tsx") });```
+- 遍历AST 插入埋点 写入结果
+- 获取行数，参数等埋点数据 检查之后 写入json文件
+
+#### vue
+
+ 同样的流程
+ 只是其
+ 转换AST ： `@vue/compiler-dom` 的 `parse`
+ 遍历AST ： `@vuedx/template-ast-types`
+
+- `traverseEvery` 遍历
+- `createSimpleExpression` 创建节点
+- `stringify` 转为template模板
+- `prettify`
+
 ## 参考链接
 
 - <https://zh.wikipedia.org/wiki/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90>

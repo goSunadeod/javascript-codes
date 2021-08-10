@@ -1,7 +1,7 @@
 module.exports = function (fileInfo, api) {
   return api
     .jscodeshift(fileInfo.source)
-    .findVariableDeclarators('guobao')
-    .renameTo('kaijun')
+    .findVariableDeclarators('MM')
+    .renameTo('haoshen')
     .toSource();
 };

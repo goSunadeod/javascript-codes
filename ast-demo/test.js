@@ -1,3 +1,3 @@
-const kaijun = 'NB';
+const haoshen = 'NB';
 
-console.log(`文哥${kaijun}`);
+console.log(`黄老师${haoshen}`);
