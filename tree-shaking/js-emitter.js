@@ -12,6 +12,7 @@ class JSEmitter {
     str += this.visitNode(node.id);
     str += '=';
     str += this.visitNode(node.init);
+    // console.log(str);
     return str + ';' + '\n';
   }
   visitIdentifier(node) {
@@ -39,6 +40,7 @@ class JSEmitter {
     str += '){';
     str += this.visitNode(node.body);
     str += '}';
+    // console.log(str);
     return str + '\n';
   }
   visitBlockStatement(node) {
