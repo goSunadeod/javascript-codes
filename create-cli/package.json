@@ -1,0 +1,30 @@
+{
+  "name": "create-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/createProject.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "createProject": "./bin/createProject.js"
+  },
+  "keywords": [],
+  "author": "sundae",
+  "license": "ISC",
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
+  ],
+  "dependencies": {
+    "arg": "^5.0.1",
+    "chalk": "^4.1.2",
+    "esm": "^3.2.25",
+    "execa": "^5.1.1",
+    "inquirer": "^8.1.2",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}
